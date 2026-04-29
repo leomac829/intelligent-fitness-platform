@@ -1,0 +1,379 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #1890ff;
+  --secondary-color: #f5222d;
+  --success-color: #52c41a;
+  --warning-color: #faad14;
+  --info-color: #13c2c2;
+  --background-color: #f5f5f5;
+  --text-color: #333333;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* 自定义样式 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-md font-medium transition-colors;
+}
+
+.btn-primary {
+  @apply bg-primary text-white hover:bg-primary/90;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white hover:bg-secondary/90;
+}
+
+.btn-outline {
+  @apply border border-primary text-primary hover:bg-primary/10;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md p-6;
+}
+
+.input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+
+/* 完全重写 Modal 样式 */
+.ant-modal-mask {
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000 !important;
+}
+
+.ant-modal {
+  z-index: 1001 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.ant-modal::before {
+  display: none !important;
+}
+
+.ant-modal::after {
+  display: none !important;
+}
+
+.ant-modal-content {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-width: 400px !important;
+  transform: none !important;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+}
+
+.ant-modal-header {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 20px 24px !important;
+  margin: 0 !important;
+}
+
+.ant-modal-title {
+  color: white !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+.ant-modal-body {
+  background: transparent !important;
+  padding: 24px !important;
+  margin: 0 !important;
+  color: white !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  text-align: center !important;
+}
+
+.ant-modal-body * {
+  color: white !important;
+}
+
+.ant-modal-footer {
+  background: transparent !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 16px 24px !important;
+  margin: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  gap: 16px !important;
+}
+
+.ant-btn {
+  border-radius: 8px !important;
+  padding: 8px 20px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  min-width: 80px !important;
+  text-align: center !important;
+}
+
+.ant-btn-default {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+}
+
+.ant-btn-default:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: white !important;
+}
+
+.ant-btn-danger {
+  background: rgba(245, 34, 45, 0.2) !important;
+  border: 1px solid rgba(245, 34, 45, 0.3) !important;
+  color: white !important;
+}
+
+.ant-btn-danger:hover {
+  background: rgba(245, 34, 45, 0.3) !important;
+  border: 1px solid rgba(245, 34, 45, 0.4) !important;
+  color: white !important;
+}
+
+/* 确保模态框居中 */
+.ant-modal {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  margin: 0 !important;
+}
+
+.ant-modal-wrap {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 1000 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* 确保没有额外的背景或边框 */
+.ant-modal-root {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* 移除所有可能的伪元素 */
+.ant-modal *::before,
+.ant-modal *::after {
+  display: none !important;
+}
+
+/* 确保内容区域没有额外的阴影或边框 */
+.ant-modal-content {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 修复内容居中 */
+.ant-modal-body p {
+  color: white !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+}
+
+/* 移除所有默认边距和填充 */
+.ant-modal * {
+  box-sizing: border-box !important;
+}
+
+/* 确保按钮大小一致 */
+.ant-btn {
+  height: 36px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* ========== Popconfirm 毛玻璃弹窗样式 ========== */
+.glassmorphism-popconfirm {
+  z-index: 2000 !important;
+}
+
+.glassmorphism-popconfirm .ant-popconfirm {
+  background: rgba(15, 23, 42, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5) !important;
+}
+
+.glassmorphism-popconfirm .ant-popconfirm-message {
+  color: #fff !important;
+}
+
+.glassmorphism-popconfirm .ant-popconfirm-message-title {
+  color: #fff !important;
+  font-size: 14px !important;
+}
+
+.glassmorphism-popconfirm .ant-popconfirm-buttons {
+  margin-top: 12px !important;
+}
+
+/* 全局 Popconfirm 深色主题 */
+.ant-popconfirm {
+  background: rgba(15, 23, 42, 0.9) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5) !important;
+  padding: 16px 20px !important;
+}
+
+/* 强制所有内部文字为白色 */
+.ant-popconfirm *,
+.ant-popconfirm span,
+.ant-popconfirm div,
+.ant-popconfirm p,
+.ant-popconfirm-message,
+.ant-popconfirm-message span,
+.ant-popconfirm-message-text,
+.ant-popconfirm-message-title {
+  color: #fff !important;
+}
+
+.ant-popconfirm-message-icon {
+  color: #fff !important;
+}
+
+.ant-popconfirm .ant-popover-inner-content {
+  color: #fff !important;
+}
+
+.ant-popconfirm .ant-popconfirm-buttons button {
+  color: #fff !important;
+}
+
+.ant-popinner-content {
+  background: transparent !important;
+  color: #fff !important;
+}
+
+/* 警告图标保持黄色，但强制内部文字白色 */
+.ant-popconfirm-message-icon svg {
+  color: #fff !important;
+  fill: #fff !important;
+}
+
+/* 按钮文字白色 */
+.ant-popconfirm-buttons button.ant-btn:not(.ant-btn-primary) {
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.ant-popconfirm-buttons button span {
+  color: #fff !important;
+}
+
+/* ========== Radio.Button 毛玻璃效果 ========== */
+.ant-radio-button-wrapper {
+  background: rgba(15, 23, 42, 0.5) !important;
+  border-color: rgba(148, 163, 184, 0.2) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.ant-radio-button-wrapper:hover {
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(148, 163, 184, 0.4) !important;
+}
+
+/* 选中状态：明显高亮 */
+.ant-radio-button-wrapper-checked {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(139, 92, 246, 0.5)) !important;
+  border-color: rgba(148, 163, 184, 0.4) !important;
+  color: #fff !important;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.3) !important;
+}
+
+.ant-radio-button-wrapper-checked:hover {
+  color: #fff !important;
+  border-color: rgba(148, 163, 184, 0.5) !important;
+}
+
+/* 第一个按钮圆角 */
+.ant-radio-button-wrapper:first-child {
+  border-radius: 8px 0 0 8px !important;
+  border-start-start-radius: 8px !important;
+  border-end-start-radius: 8px !important;
+}
+
+/* 最后一个按钮圆角 */
+.ant-radio-button-wrapper:last-child {
+  border-radius: 0 8px 8px 0 !important;
+  border-start-end-radius: 8px !important;
+  border-end-end-radius: 8px !important;
+}
+
+
