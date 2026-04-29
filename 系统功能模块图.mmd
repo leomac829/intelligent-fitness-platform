@@ -1,0 +1,31 @@
+```mermaid
+flowchart TD
+    Root["🏋 智能健身管理平台"]
+
+    A["🔐 用户认证模块\n├─ 用户登录（账号密码）\n├─ 用户注册\n├─ 个人资料管理\n├─ 修改密码\n└─ 头像上传"]
+
+    B["📊 主仪表盘模块\n├─ 首页概览\n│  （体重/体脂/围度/日历/目标）\n├─ 日程管理\n│  （创建/查看/删除）\n└─ 目标管理\n   （体重/训练/热量/类型）"]
+
+    C["🏋 训练管理模块\n├─ 🏃 训练动作库\n│  （搜索/筛选/详情/分页）\n├─ 📝 训练日记\n│  （查看/创建/详情）\n└─ 💪 三分化训练计划\n   （配置/生成/周切换）"]
+
+    D["🥗 饮食管理模块\n└─ 减脂饮食计划\n   （BMR/TDEE/食谱生成/替换）"]
+
+    E["🛠 辅助功能模块\n├─ 🎬 视频库\n│  （浏览/播放/搜索）\n└─  AI健身助手\n   （对话/历史/快捷问题）"]
+
+    F["🛡 管理后台模块\n├─ 用户管理\n└─ 视频库管理"]
+
+    Root --> A
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+
+    style Root fill:#1a1a2e,stroke:#1677ff,stroke-width:3px,color:#fff,font-size:16px
+    style A fill:#e6f4ff,stroke:#1677ff,stroke-width:2px,color:#003a8c
+    style B fill:#fff7e6,stroke:#faad14,stroke-width:2px,color:#874d00
+    style C fill:#f6ffed,stroke:#52c41a,stroke-width:2px,color:#237804
+    style D fill:#fcffe6,stroke:#a0d911,stroke-width:2px,color:#3f6600
+    style E fill:#f9f0ff,stroke:#722ed1,stroke-width:2px,color:#391085
+    style F fill:#fff1f0,stroke:#f5222d,stroke-width:2px,color:#a8071a
+```
